@@ -1,0 +1,12 @@
+int evenDigits(int n)
+{
+      if (n < 0) {
+        return -evenDigits(-n);
+    } else if (n == 0) {
+        return 0;
+    } else if (n % 2 == 1) {
+        return evenDigits(n / 10);
+    } else {
+        return 10 * evenDigits(n / 10) + (n % 10);
+    }
+}
